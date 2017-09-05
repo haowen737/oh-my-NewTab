@@ -1,0 +1,19 @@
+{
+  "name": "Chronos",
+  "description": "Override the new tab page with a cool page",
+  "version": "0.2",
+  "incognito": "split",
+  "browser_action": {
+    "default_icon": "icon.jpeg"
+  },
+  "permissions": [
+    "bookmarks",
+    "chrome://favicon/",
+    "storage"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "manifest_version": 2
+}

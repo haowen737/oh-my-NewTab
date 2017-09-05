@@ -1,0 +1,18 @@
+.search-bar-container {
+    margin: 0 auto;
+    width: 40%;
+    max-width: 450px;
+    height: 40px;
+    border-radius: 50px;
+}
+.dashboard {
+}
+.header {
+    margin-top: 50px;
+}
+.main {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,41 @@
+.menus {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+}
+.menu-wrap{
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    flex: 1 1 auto;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    text-align: center;
+    color: #B8B8B8;
+    justify-content: center;
+    align-items: center;
+}
+.menu {
+    position: relative;
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+    /* background: rgba(255,255,255,.5); */
+    /* box-shadow: 0px 0px 14px rgba(172, 172, 172, 0.10); */
+}
+.menu:hover img {
+    top: -15px;
+}
+.menu img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 80px;
+    transition: all .4s ease;
+}
+.menu span {
+    flex: 1;
+}
