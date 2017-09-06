@@ -1,6 +1,6 @@
 <div class="menus">
     <div *ngFor="let menu of menus" class="menu-wrap">
-        <div class="menu">
+        <div class="menu" (click)="clickMenu(menu.id)">
             <img src="{{menu.icon}}" alt="">
             <!-- <span>{{menu.title}}</span> -->
         </div>

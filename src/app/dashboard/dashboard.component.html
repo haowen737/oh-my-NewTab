@@ -4,6 +4,9 @@
         <app-search-bar></app-search-bar>
     </div>
     <div class="main">
-        <app-menu></app-menu>
+        <app-menu (onMenuActive)="onMenuActive($event)"></app-menu>
     </div>
+    <app-stage
+        [show]="stageState"
+        (onStageClose)="onStageClose()"></app-stage>
 </div>

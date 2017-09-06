@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Menu } from './menu';
 
@@ -19,16 +19,21 @@ export class MenuComponent implements OnInit {
     }, {
         icon: 'assets/images/favorite.png',
         title: 'favorite',
-        id: 1
+        id: 2
     }, {
         icon: 'assets/images/history.png',
         title: 'history',
-        id: 1
+        id: 3
     }];
-    constructor() { }
+    @Output () onMenuActive = new EventEmitter<boolean>();
 
-    ngOnInit() {
+    constructor () { }
+
+    ngOnInit () {
 
     }
 
+    clickMenu (id) {
+        this.onMenuActive.emit(id);
+    }
 }

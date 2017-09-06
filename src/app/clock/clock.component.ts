@@ -13,7 +13,7 @@ export class ClockComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit() {
+    ngOnInit () {
         this.initClock();
     }
 

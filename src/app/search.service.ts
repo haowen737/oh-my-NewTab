@@ -8,9 +8,7 @@ import 'rxjs/add/operator/toPromise';
 export class SearchService {
     private suggestsUrl: String = 'http://google.com/complete/search?client=chrome';
     private headers = new Headers({
-        'Access-Control-Allow-Origin': 'http://google.com',
-        'Accept': 'application/json, text/javascript, */*; q=0.01',
-        'Content-Type': 'text/plain'
+        'Accept': 'application/json, text/javascript, */*; q=0.01'
     });
 
     constructor(
@@ -24,6 +22,14 @@ export class SearchService {
             .toPromise()
             .then(res => res)
             .catch(this.handleError);
+    }
+
+    getSuggestionJsonp (data) {
+        const apiURL = `${this.suggestsUrl}&q=${data}&infinityTime=1504579999185`;
+        return this.jsonp.request(apiURL)
+            .map(res => {
+                console.log(res);
+            });
     }
 
     private handleError (error: any): Promise<any> {
