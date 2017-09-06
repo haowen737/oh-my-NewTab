@@ -8,14 +8,14 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     animations: [
         trigger('stageState', [
             state('hide', style({
-                // display: 'none',
+                display: 'none',
                 opacity: '0',
-                transform: 'translateY(-100%)'
+                transform: 'scale(1.8)',
             })),
             state('show', style({
                 opacity: '0.8',
-                // display: 'block',
-                transform: 'translateY(0)'
+                display: 'block',
+                transform: 'scale(1)'
             })),
             transition('hide => show', animate('700ms ease')),
             transition('show => hide', animate('700ms ease'))
@@ -28,7 +28,7 @@ export class StageComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit() { 
+    ngOnInit() {
 
     }
 

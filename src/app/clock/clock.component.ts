@@ -20,6 +20,7 @@ export class ClockComponent implements OnInit {
     initClock () {
         const lastHour = this.clockHour;
         const lastMin = this.clockMin;
+        this.renderTime(lastHour, lastMin);
         this.clock = window.setInterval(() => {
             this.renderTime(lastHour, lastMin);
         }, 1000);
