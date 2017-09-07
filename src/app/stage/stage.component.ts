@@ -10,7 +10,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
             state('hide', style({
                 display: 'none',
                 opacity: '0',
-                transform: 'scale(1.8)',
+                transform: 'scale(1.1)',
             })),
             state('show', style({
                 opacity: '0.8',
@@ -24,7 +24,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class StageComponent implements OnInit {
     @Input() show: String;
-    @Output() onStageClose = new EventEmitter<boolean>();
+    @Output() onClose = new EventEmitter<any>();
 
     constructor() { }
 
@@ -33,6 +33,6 @@ export class StageComponent implements OnInit {
     }
 
     clickClose () {
-        this.onStageClose.emit();
+        this.onClose.emit(null);
     }
 }

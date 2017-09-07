@@ -1,12 +1,12 @@
 <div class="dashboard">
-    <div class="header">
+    <div class="header" [@blur]="stageState">
         <app-clock></app-clock>
         <app-search-bar></app-search-bar>
     </div>
-    <div class="main">
+    <div class="main" [@blur]="stageState">
         <app-menu (onMenuActive)="onMenuActive($event)"></app-menu>
     </div>
     <app-stage
         [show]="stageState"
-        (onStageClose)="onStageClose()"></app-stage>
+        (onClose)="onStageClose($event)"></app-stage>
 </div>
