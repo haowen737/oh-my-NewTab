@@ -4,6 +4,6 @@ import { Directive, ViewContainerRef } from '@angular/core';
     selector: '[appWeather]'
 })
 
-export class WeatherForecastDirective {
+export class WeatherDirective {
     constructor(public viewContainerRef: ViewContainerRef) { }
 }

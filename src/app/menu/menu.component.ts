@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
         title: 'history',
         id: 3
     }];
-    @Output () onMenuActive = new EventEmitter<boolean>();
+    @Output () onMenuClick = new EventEmitter<boolean>();
 
     constructor () { }
 
@@ -34,6 +34,6 @@ export class MenuComponent implements OnInit {
     }
 
     clickMenu (id) {
-        this.onMenuActive.emit(id);
+        this.onMenuClick.emit(id);
     }
 }

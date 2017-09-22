@@ -1,12 +1,13 @@
 <div class="dashboard">
-    <div class="header" [@blur]="stageState">
-        <app-clock></app-clock>
-        <app-search-bar></app-search-bar>
-    </div>
-    <div class="main" [@blur]="stageState">
-        <app-menu (onMenuActive)="onMenuActive($event)"></app-menu>
-    </div>
-    <app-stage
-        [show]="stageState"
-        (onClose)="onStageClose($event)"></app-stage>
+  <div class="header" [@blur]="stageState">
+    <app-clock></app-clock>
+    <app-search-bar></app-search-bar>
+  </div>
+  <div class="main" [@blur]="stageState">
+    <app-menu (onMenuActive)="onMenuActive($event)"></app-menu>
+  </div>
+  <app-stage-square
+  [show]="stageState"
+  (onClose)="onStageClose($event)"
+  [dancers]="dancers"></app-stage-square>
 </div>

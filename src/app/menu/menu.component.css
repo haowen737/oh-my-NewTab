@@ -1,13 +1,13 @@
 .menus {
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 300px;
     display: flex;
 }
 .menu-wrap{
     font-family: 'Josefin Slab', serif;
     font-size: 20px;
     flex: 1 1 auto;
-    width: 150px;
+    width: 50px;
     height: 150px;
     display: flex;
     text-align: center;
@@ -33,7 +33,7 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 80px;
+    width: 40px;
     transition: all .4s ease;
 }
 .menu span {

@@ -4,8 +4,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(to top, rgba(175, 231, 255, .75) -10%, rgba(255, 238, 241, .6));
-
+    background: linear-gradient(to top, rgba(0, 179, 255, 0.6) -10%, rgba(255, 238, 241, .6));
     box-shadow: 0 0 2px 10px #b8e7ff;
 }
 .close-wrap {

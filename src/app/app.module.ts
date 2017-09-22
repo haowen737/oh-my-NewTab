@@ -12,7 +12,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ClockComponent } from './clock/clock.component';
 import { MenuComponent } from './menu/menu.component';
-import { StageComponent } from './stage/stage.component';
+import { StageSquareComponent } from './stage-square/stage-square.component';
+import { WeatherComponent } from './weather/weather.component';
+import { BookmarksComponent } from './bookmarks/bookmarks.component';
+
+import { StageDirective } from './stage-square/stage.directive';
+import { StageService } from './stage-square/stage.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import { StageComponent } from './stage/stage.component';
     SearchBarComponent,
     ClockComponent,
     MenuComponent,
-    StageComponent
+    StageSquareComponent,
+    WeatherComponent,
+    BookmarksComponent,
+    StageDirective
   ],
   imports: [
     BrowserModule,
@@ -30,6 +38,8 @@ import { StageComponent } from './stage/stage.component';
     JsonpModule,
     BrowserAnimationsModule
   ],
+  entryComponents: [WeatherComponent, BookmarksComponent],
+  providers: [StageService],
   bootstrap: [AppComponent]
 })
 
