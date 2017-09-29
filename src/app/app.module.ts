@@ -18,6 +18,7 @@ import { BookmarksComponent } from './bookmarks/bookmarks.component';
 
 import { StageDirective } from './stage-square/stage.directive';
 import { StageService } from './stage-square/stage.service';
+import { WindowService } from './window.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { StageService } from './stage-square/stage.service';
     BrowserAnimationsModule
   ],
   entryComponents: [WeatherComponent, BookmarksComponent],
-  providers: [StageService],
+  providers: [StageService, WindowService],
   bootstrap: [AppComponent]
 })
 

@@ -49,10 +49,9 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit () {
-    // setTimeout(() => {
-    //     this.stageShow = 'show';
-    // }, 2000);
-    // this.dancers = this.stageService.getDancers();
+    setTimeout(() => {
+      this.onMenuClick(1);
+    }, 700);
   }
 
   onMenuClick (id) {

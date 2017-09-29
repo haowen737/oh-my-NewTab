@@ -16,7 +16,7 @@ import { Dancer } from './dancer';
       state('hide', style({
         display: 'none',
         opacity: '0',
-        transform: 'scale(1.1)',
+        transform: 'scale(1.1)'
       })),
       state('show', style({
         opacity: '0.8',
@@ -39,7 +39,6 @@ export class StageSquareComponent implements AfterViewInit, OnInit {
   ) { }
 
   ngAfterViewInit() {
-    // this.loadComponent();
     this.getDancers();
   }
 
@@ -48,7 +47,6 @@ export class StageSquareComponent implements AfterViewInit, OnInit {
   }
 
   renderDancer (id) {
-    console.log(id);
     this.loadComponent(id);
   }
 

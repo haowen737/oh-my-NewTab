@@ -1,1 +1,18 @@
-<div>this is bookmarks</div>
+<div class="bm-container">
+  <div class="bm">
+    <div class="bm-main">
+      <div class="bm-title">Bookmarks</div>
+      <div class="bm-main-children">
+        <div class="bm-child" *ngFor="let bm of bookmarks">
+          <a :href="{{bm.url}}">{{bm.title}}</a>
+        </div>
+      </div>
+    </div>
+    <div class="bm-finder">
+      <div class="bm-title">Finder</div>
+        <ul>
+          <li *ngFor="let pr of parent" (click)="onClickFinder(pr)">{{pr.title}}</li>
+        </ul>
+    </div>
+  </div>
+</div>
