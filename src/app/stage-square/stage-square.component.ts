@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ComponentFactoryResolver, AfterViewInit } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { trigger, state, useAnimation, transition } from '@angular/animations';
+
+import { bounceIn, fadeOut } from 'ng-animate';
 
 import { StageDirective } from './stage.directive';
 
@@ -13,24 +15,18 @@ import { Dancer } from './dancer';
   styleUrls: ['./stage-square.component.css'],
   animations: [
     trigger('stageState', [
-      state('hide', style({
-        display: 'none',
-        opacity: '0',
-        transform: 'scale(1.1)'
+      transition('void => *', useAnimation(bounceIn, {
+        params: { timing: 0.7 }
       })),
-      state('show', style({
-        opacity: '0.8',
-        display: 'block',
-        transform: 'scale(1)'
-      })),
-      transition('hide => show', animate('700ms ease')),
-      transition('show => hide', animate('700ms ease'))
+      transition('* => void', useAnimation(fadeOut, {
+        params: { timing: 0.7 }
+      }))
     ])
   ]
 })
 export class StageSquareComponent implements AfterViewInit, OnInit {
   @Input() dancer: Dancer[];
-  @Input() show: String;
+  @Input() show: Boolean;
   @Output() onClose = new EventEmitter<any>();
   @ViewChild(StageDirective) stageHost: StageDirective;
 
@@ -51,7 +47,7 @@ export class StageSquareComponent implements AfterViewInit, OnInit {
   }
 
   loadComponent(id) {
-    // console.log(this.dancers);
+    console.log(this.stageHost);
     const viewContainerRef = this.stageHost.viewContainerRef;
     viewContainerRef.clear();
 

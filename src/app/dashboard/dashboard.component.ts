@@ -41,7 +41,7 @@ import { Dancer } from './../stage-square/dancer';
 export class DashboardComponent implements OnInit {
   @ViewChild(StageSquareComponent)
   private stageComponent: StageSquareComponent;
-  stageShow: String = 'hide';
+  stageShow: Boolean = false;
   dancer: Dancer[] = this.stageService.getDancers();
 
   constructor(
@@ -55,11 +55,13 @@ export class DashboardComponent implements OnInit {
   }
 
   onMenuClick (id) {
-    this.stageShow = 'show';
-    this.stageComponent.renderDancer(id);
+    this.stageShow = true;
+    setTimeout(() => {
+      this.stageComponent.renderDancer(id);
+    }, 300);
   }
 
   onStageClose (val) {
-    this.stageShow = 'hide';
+    this.stageShow = false;
   }
 }
