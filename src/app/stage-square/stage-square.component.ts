@@ -19,7 +19,7 @@ import { Dancer } from './dancer';
         params: { timing: 0.7 }
       })),
       transition('* => void', useAnimation(fadeOut, {
-        params: { timing: 0.7 }
+        params: { timing: 0.4 }
       }))
     ])
   ]

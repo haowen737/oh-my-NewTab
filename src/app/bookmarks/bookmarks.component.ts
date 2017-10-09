@@ -17,7 +17,7 @@ export class BookmarksComponent implements OnInit {
   ngOnInit() {
     // this.fakeData();
     this.renderTree();
-    this.filterParent(this.bookmarks);
+    console.log(chrome);
   }
 
   renderTree () {
@@ -26,6 +26,7 @@ export class BookmarksComponent implements OnInit {
     chrome
       .bookmarks
       .getTree((tree) => {
+        console.log(tree);
         this.bookmarks = tree[0].children[0].children;
         this.filterParent(this.bookmarks);
         console.log(this.bookmarks);
@@ -53,17 +54,15 @@ export class BookmarksComponent implements OnInit {
       });
   }
 
+  regTitle (str) {
+    return str.replace(/(\_.+)/, '').replace(/(\(.+)/, '').replace(/(\|.+)/, '').replace(/(\-.+)/, '');
+  }
+
   fakeData () {
-    this.bookmarks = [{
-      title: 'Bookmarks Bar',
-      children: [
-        { dateAdded: 1379060916447, id: '7', index: 0, parentId: '1', title: 'TED', url: 'http://www.ted.com' },
-        { dateAdded: 1379060916447, id: '7', index: 0, parentId: '1', title: 'TED2', url: 'http://www.ted.com' },
-        { children: [{ title: 'second' }], title: 'has child', id: 2 }
-      ]
-    }, {
-      title: 'other Bookmarks',
-      id: 1
-    }];
+    this.bookmarks = [
+      { dateAdded: 1379060916447, id: '7', index: 0, parentId: '1', title: '美团网_团购网_每天团购一次_好口碑放心团_MeiTuan.com', url: 'http://www.ted.com' },
+      { dateAdded: 1379060916447, id: '7', index: 0, parentId: '1', title: '打架吧鬼神 (2016)720p|1080p迅雷下载-高清下载-免费下载-界绍部', url: 'http://www.ted.com' },
+      { children: [{ title: 'second' }], title: 'has child', id: 2 }
+    ]
   }
 }

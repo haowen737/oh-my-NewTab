@@ -4,7 +4,7 @@
       <div class="bm-title">Bookmarks</div>
       <div class="bm-main-children">
         <div class="bm-child" *ngFor="let bm of bookmarks">
-          <a :href="{{bm.url}}">{{bm.title}}</a>
+          <a :href="{{bm.url}}">{{regTitle(bm.title)}}</a>
         </div>
       </div>
     </div>

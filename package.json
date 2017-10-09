@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve && ng build && cp manifest.json ./dist",
-    "build": "ng build && cp manifest.json ./dist",
+    "start": "ng serve",
+    "build": "ng build && cp ./src/manifest.json ./dist",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
