@@ -1,1 +1,1 @@
-<div class="clock">{{clockHour}}:{{clockMin}}</div>
+<div class="clock">{{clockHour}}:{{clockMin.length < 2 ? '0' + clockMin : clockMin}}</div>

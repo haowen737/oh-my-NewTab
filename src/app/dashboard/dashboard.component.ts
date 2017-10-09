@@ -26,10 +26,10 @@ import { Dancer } from './../stage-square/dancer';
   styleUrls: ['./dashboard.component.css'],
   animations: [
     trigger('blur', [
-      state('hide', style({
+      state('false', style({
           filter: 'blur(0px)'
       })),
-      state('show', style({
+      state('true', style({
           filter: 'blur(3px)'
       })),
       transition('hide => show', animate('700ms ease')),

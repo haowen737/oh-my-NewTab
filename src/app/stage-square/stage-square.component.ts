@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ComponentFactoryResolver, AfterViewInit } from '@angular/core';
 import { trigger, state, useAnimation, transition } from '@angular/animations';
 
-import { bounceIn, fadeOut } from 'ng-animate';
+import { bounceIn, fadeOut, rotateIn } from 'ng-animate';
 
 import { StageDirective } from './stage.directive';
 
@@ -16,10 +16,15 @@ import { Dancer } from './dancer';
   animations: [
     trigger('stageState', [
       transition('void => *', useAnimation(bounceIn, {
-        params: { timing: 0.7 }
+        params: { timing: 0.5 }
       })),
       transition('* => void', useAnimation(fadeOut, {
-        params: { timing: 0.4 }
+        params: { timing: 0.2 }
+      }))
+    ]),
+    trigger('closeBtnState', [
+      transition('* => *', useAnimation(rotateIn, {
+        params: { timing: 1.0 }
       }))
     ])
   ]

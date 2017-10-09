@@ -3,7 +3,7 @@
     <div class="bm-main">
       <div class="bm-title">Bookmarks</div>
       <div class="bm-main-children">
-        <div class="bm-child" *ngFor="let bm of bookmarks">
+        <div class="bm-child" *ngFor="let bm of bookmarks" [@bookmarkState]="bm">
           <a :href="{{bm.url}}">{{regTitle(bm.title)}}</a>
         </div>
       </div>

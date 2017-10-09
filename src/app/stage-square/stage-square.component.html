@@ -3,7 +3,7 @@
     [@stageState]="show"
     *ngIf="show">
     <ng-template stage-host></ng-template>
-    <div class="close-wrap">
+    <div class="close-wrap" [@closeBtnState]="true">
         <a class="close" href="javascript:;" (click)="clickClose()"></a>
     </div>
 </div>
