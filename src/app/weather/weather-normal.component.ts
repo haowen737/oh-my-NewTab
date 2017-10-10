@@ -9,6 +9,7 @@ export class WeatherNormalComponent implements OnInit {
   @Input() data: any;
   forecast: Array<any> = [];
   weather: Object = {};
+
   constructor() { }
 
   ngOnInit() {

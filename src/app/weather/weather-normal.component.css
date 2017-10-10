@@ -1,5 +1,6 @@
 .weather {
   margin-top: 100px;
+  color: #5c6d7b;
 }
 .weather-layout {
   text-align: center;
@@ -16,4 +17,16 @@
   width: 150px;
   display: inline-block;
   flex: 1 1 auto;
+  font-size: 1.1rem;
+}
+
+.forecast-day {
+  font-size: 1.2rem;
+}
+
+.weather-layout h2 {
+  font-size: 1.5rem;
+}
+.weather-layout p {
+  font-size: 1.2rem;
 }

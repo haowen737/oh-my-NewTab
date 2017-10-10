@@ -12,7 +12,7 @@ import { bounceIn, fadeIn } from 'ng-animate';
   animations: [
     trigger('bookmarkState', [
       transition('void => *', useAnimation(fadeIn, {
-        params: { timing: 0.7 }
+        params: { timing: 0.3 }
       }))
     ])
   ]

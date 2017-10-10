@@ -12,7 +12,8 @@ import { WeatherStatusComponent } from './weather-status.component';
 
 @Component({
   selector: 'app-weather',
-  templateUrl: './weather.component.html'
+  templateUrl: './weather.component.html',
+  styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
   @ViewChild(WeatherStatusDirective) weatherStatusHost: WeatherStatusDirective;
