@@ -1,0 +1,16 @@
+<div class="weather">
+  <div class="weather-layout">
+    <h2>{{weather.text}}</h2>
+    <p>{{weather.low}}℃ - {{weather.high}}℃</p>
+    <p>{{weather.date}}</p>
+  </div>
+  <div class="forecast-layout">
+    <div class="forecast-list">
+      <div class="forecast" *ngFor="let f of forecast">
+        <div class="forecast-day">{{f.day}}</div>
+        <div class="forecast-tempture">{{f.low}}℃ - {{f.high}}℃</div>
+        <div class="forecast-weather">{{f.text}}</div>
+      </div>
+    </div>
+  </div>
+</div>

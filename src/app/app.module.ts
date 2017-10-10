@@ -1,25 +1,33 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpModule, JsonpModule, Jsonp, Response } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule,
+  JsonpModule, Jsonp, Response } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { StageSquareComponent } from './stage-square/stage-square.component';
+import { WeatherEmptyComponent } from './weather/weather-empty.component';
+import { WeatherLoadingComponent } from './weather/weather-loading.component';
+import { WeatherNormalComponent } from './weather/weather-normal.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { BookmarksComponent } from './bookmarks/bookmarks.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { WeatherComponent } from './weather/weather.component';
 import { ClockComponent } from './clock/clock.component';
 import { MenuComponent } from './menu/menu.component';
-import { StageSquareComponent } from './stage-square/stage-square.component';
-import { WeatherComponent } from './weather/weather.component';
-import { BookmarksComponent } from './bookmarks/bookmarks.component';
+import { AppComponent } from './app.component';
+
+import { WeatherStatusService } from './weather/weather-status.service';
+import { IpLocationService } from './weather/iplocation.service';
+import { StageService } from './stage-square/stage.service';
+import { WeatherService } from './weather/weather.service';
+import { WindowService } from './window.service';
 
 import { StageDirective } from './stage-square/stage.directive';
-import { StageService } from './stage-square/stage.service';
-import { WindowService } from './window.service';
-import { WeatherService } from './weather/weather.service';
+import { WeatherStatusDirective } from './weather/weather-status.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +39,11 @@ import { WeatherService } from './weather/weather.service';
     StageSquareComponent,
     WeatherComponent,
     BookmarksComponent,
-    StageDirective
+    StageDirective,
+    WeatherStatusDirective,
+    WeatherEmptyComponent,
+    WeatherLoadingComponent,
+    WeatherNormalComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +52,20 @@ import { WeatherService } from './weather/weather.service';
     JsonpModule,
     BrowserAnimationsModule
   ],
-  entryComponents: [WeatherComponent, BookmarksComponent],
-  providers: [StageService, WindowService, WeatherService],
+  entryComponents: [
+    WeatherComponent,
+    BookmarksComponent,
+    WeatherEmptyComponent,
+    WeatherLoadingComponent,
+    WeatherNormalComponent
+  ],
+  providers: [
+    StageService,
+    WindowService,
+    WeatherService,
+    IpLocationService,
+    WeatherStatusService
+  ],
   bootstrap: [AppComponent]
 })
 

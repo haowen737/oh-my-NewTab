@@ -50,7 +50,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit () {
     setTimeout(() => {
-      this.onMenuClick(1);
+      this.onMenuClick(0);
     }, 700);
   }
 
